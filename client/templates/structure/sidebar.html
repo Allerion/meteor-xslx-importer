@@ -1,0 +1,18 @@
+
+<template name="InternalSideBar">
+	<div class="main-sidebar">
+		<!-- Inner sidebar -->
+		<div class="sidebar">
+			
+			{{> userPanel currentUser}}
+			
+			<!-- Sidebar Menu -->
+			<ul class="sidebar-menu">
+				<li><a href="{{pathFor 'Dashboard'}}"><i class="fa fa-files-o"></i> <span>Items</span></a></li>
+				<li><a href="{{pathFor 'Workbooks'}}"><i class="fa fa-book"></i> <span>Workbooks</span></a></li>
+				<li><a href="#" class="wipe-system text-danger"><i class="fa fa-times"></i> <span>Clear Database</span></a></li>
+			</ul><!-- /.sidebar-menu -->
+
+		</div><!-- /.sidebar -->
+	</div><!-- /.main-sidebar -->
+</template>

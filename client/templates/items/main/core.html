@@ -1,0 +1,66 @@
+
+<template name="thouCount">{{count}}</template>
+<template name="textSummary">{{summary}}</template>
+<template name="textSummaryLarge">{{summary}}</template>
+
+<template name="pageHelpToggle">
+	<button type="button" class="sidebutton-toggle page-help-toggle"><i class="fa fa-question"></i></button>
+</template>
+
+<template name="status_skeleton">
+
+	{{#unless connected}}
+	
+		<div class="site-status-block">
+
+			<div class="alert alert-warning {{option 'classes'}} text-center" role="alert">
+				
+				<strong>
+					<span class="glyphicon glyphicon-warning-sign"></span>
+					{{message}}
+				</strong>
+				
+				{{extraMessage}}
+
+				{{#if showReconnect}}
+					<a href="#" class="alert-link">{{reconnectLabel}}</a>
+				{{/if}}
+
+			</div>
+
+		</div>
+
+	{{/unless}}
+
+</template>
+
+<template name="loadingMini">
+	<div class="hw text-center">
+		<div><img src='/images/logo/logo.png' class='gettingstarted-logo'></div>
+		<h1 class="m-t-lg animated infinite pulse text-gradient">{{_ "loading.title"}}</h1>
+	</div>
+</template>
+
+<template name="switch">
+	{{#if equals align right}}
+		<div class="pull-right">
+			<div class="onoffswitch">
+			    <input type="checkbox" name="{{name}}" class="onoffswitch-checkbox switch-check" id="{{id}}" {{checked}}>
+			    <label class="onoffswitch-label" for="{{id}}">
+			        <span class="onoffswitch-inner"></span>
+			        <span class="onoffswitch-switch"></span>
+			    </label>
+			</div>
+		</div>
+	{{else}}
+		<div class="onoffswitch">
+		    <input type="checkbox" name="{{name}}" class="onoffswitch-checkbox switch-check" id="{{id}}" {{checked}}>
+		    <label class="onoffswitch-label" for="{{id}}">
+		        <span class="onoffswitch-inner"></span>
+		        <span class="onoffswitch-switch"></span>
+		    </label>
+		</div>
+	{{/if}}
+</template>
+
+

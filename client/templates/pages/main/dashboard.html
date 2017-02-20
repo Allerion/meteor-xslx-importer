@@ -1,0 +1,32 @@
+
+
+<!-- The content for the dashboard view -->
+
+<template name="Dashboard">
+    
+    <div class="content-header">
+        <h1>Items</h1>
+        <ol class="breadcrumb">
+            <li class="active"><a href="{{pathFor 'Dashboard'}}"><i class="fa fa-files-o"></i> Items</a></li>
+        </ol>
+    </div>
+
+    <div class="content foot-padder">
+    	
+    	<div class="row">
+    		
+    		<div class="col-xs-12">
+    			
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        {{> ReactiveDatatable tableData=reactiveDataFunction options=optionsObject }}
+                    </div>
+                </div>
+    			
+    		</div>
+
+    	</div>
+
+    </div>
+
+</template>

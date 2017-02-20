@@ -1,0 +1,32 @@
+
+<!-- The content for the internal layout -->
+
+<template name="ExternalLayout">
+	
+	{{> InternalTopBarBlank}}
+
+	{{>Template.dynamic template=content}}
+	
+</template>
+
+<template name="BlankLayout">
+	
+	{{> InternalTopBarLoading}}
+
+	{{>Template.dynamic template=content}}
+	
+</template>
+
+<template name="InternalLayout">
+	{{#AdminLTE skin="purple-light" sidebarMini="true"}}	
+		
+		{{> InternalTopBar side=true}}
+
+		{{> InternalSideBar}}
+		
+		<div class="content-wrapper">
+			{{>Template.dynamic template=content}}
+		</div>
+
+	{{/AdminLTE}}
+</template>
