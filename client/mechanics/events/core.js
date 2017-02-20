@@ -22,6 +22,7 @@ Template.body.events({
         Meteor.loginWithPassword(username, password, function(err){
             if (err){
                 Bert.alert( err.reason + " ["+err.error+"]", 'danger', 'fixed-top', 'fa-frown-o' );
+                formDisable($form,false);
             }else{
                 Bert.alert("You're logged in!", 'success', 'fixed-top', 'fa-thumbs-o-up' );
                 setTimeout(function(){return formDisable($form,false);},5000);
@@ -45,13 +46,6 @@ Template.body.events({
                 FlowRouter.go("Index");
             }
         });
-    },
-    'click .summaryReadMore': function(e){
-        $(e.target).siblings(".summaryShort").andSelf().hide();
-        $(e.target).siblings(".summaryFull").show();
-    },
-    'click .summaryReadLess': function(e){
-        $(e.target).parent().hide().siblings(".summaryShort,.summaryReadMore").show();
     },
     'click .wipe-system': function(e){
         e.preventDefault();
